@@ -13,12 +13,15 @@ Tested on: Windows 10 home, AMD64 Family 23 Model 24 Stepping 1 AuthenticAMD ~21
            Firefox 74.0 (64 bity)
 		   MS Edge 
 ----
+24a5122ef60 - 24a512270f0 = 0x7E70 && 0x7f10 - 0x7E70 = A0 = offset = OUT_OF_BOUNDS READ
+----
 0:123> g
 (2560.1f28): Access violation - code c0000005 (!!! second chance !!!)
 atidxx64!AmdDxGsaFreeCompiledShader+0x45901d:
 00007ffc`994cfecd 83bba000000013  cmp     dword ptr [rbx+0A0h],13h ds:0000024a`5122f000=????????
 0:123> !heap -p -a @rbx
-    address 0000024a5122ef60 found in
+                 24a512270f0
+    address 0000024a5122ef60 found in 
     _DPH_HEAP_ROOT @ 24a50701000
     in busy allocation (  DPH_HEAP_BLOCK:         UserAddr         UserSize -         VirtAddr         VirtSize)
                              24a653f10d0:      24a512270f0             7f10 -      24a51227000             9000
